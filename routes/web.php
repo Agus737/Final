@@ -7,5 +7,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('welcome',[controladorBD::class,'index'])->name('alumno.index');
-Route::post('registro', [controladorBD::class,'store'])->name('alumno.store');
+Route::get('alumno',[controladorBD::class,'index'])->name('alumno.index');
+Route::post('alumno', [controladorBD::class,'store'])->name('alumno.store');

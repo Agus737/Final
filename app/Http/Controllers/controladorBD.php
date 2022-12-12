@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\validacion;
+use App\Http\Requests\validarAlumno;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
@@ -14,7 +14,7 @@ class controladorBD extends Controller
     {
         $consultaRegistros=DB::table('infokids')->get();
 
-        return view("welcome", compact('consultaRegistros'));
+        return view("consultar", compact('consultaRegistros'));
     }
 
 
@@ -24,7 +24,7 @@ class controladorBD extends Controller
     }
 
   
-    public function store(validacion $request)
+    public function store(validarAlumno $request)
     {
         DB::table('infokids')->insert([
             "name"=> $request -> input('txtname'),
@@ -35,7 +35,7 @@ class controladorBD extends Controller
             "updated_at" => Carbon::now()
         ]); 
 
-        return redirect('welcome')->with('confirm');
+        return redirect('alumno')->with('confirm');
 
     }
 

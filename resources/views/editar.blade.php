@@ -10,15 +10,6 @@
         timer: 3500
       })</script>"!!}
     @endif
-    @if (session()->has('eliminado'))
-    {!!"<script> Swal.fire({
-      position: 'center',
-      icon: 'error',
-      title: 'Se ha eliminado el Alumno',
-      showConfirmButton: false,
-      timer: 3500
-    })</script>"!!}
-  @endif
         
     
     <div class="container">
@@ -49,15 +40,13 @@
                     <td>{{$consulta->address}}</td>
                     <td>{{$consulta->movile_no}}</td>
                     <th><button type="button" class="btn btn-outline-success">Edit</button></th>
-                    <th><button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminar{{$consulta->id}}">Delete</button></th>
-                    @include('eliminar')
-                </tr>
+                    <th><button type="button" class="btn btn-outline-danger">Delete</button></th>
+                    </tr>
                 </tbody>
                 @endforeach
         </table>
     </div>
     @include('registro')
-    
 
    
 @endsection

@@ -35,7 +35,7 @@ class controladorBD extends Controller
             "updated_at" => Carbon::now()
         ]); 
 
-        return redirect('alumno')->with('confirm');
+        return redirect('alumno')->with('confirm','AgregadoCorrectamente');
 
     }
 
@@ -60,6 +60,8 @@ class controladorBD extends Controller
   
     public function destroy($id)
     {
-        //
+        DB::table('infokids')->where('id',$id)->delete();
+
+        return redirect('alumno')->with('eliminado','EliminadoCorrectamente');
     }
 }

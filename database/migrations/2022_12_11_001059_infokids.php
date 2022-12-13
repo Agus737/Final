@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('course');
             $table->string('address');
-            $table->integer('movile_no');
+            $table->bigInteger('movile_no');
             $table->timestamps();
         });
         

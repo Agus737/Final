@@ -10,3 +10,4 @@ Route::get('/', function () {
 Route::get('alumno',[controladorBD::class,'index'])->name('alumno.index');
 Route::post('alumno', [controladorBD::class,'store'])->name('alumno.store');
 Route::delete('alumno/{id}',[controladorBD::class,'destroy'])->name('alumno.destroy');
+Route::put('alumno/{id}',[controladorBD::class,'update'])->name('alumno.update');

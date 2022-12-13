@@ -27,7 +27,7 @@ class validarAlumno extends FormRequest
             'txtname'=>'required',
             'txtcourse'=>'required',
             'txtaddress'=>'required',
-            'txtmovile'=>'required|max:10'
+            'txtmovile'=>'required|numeric|digits_between:10,10'
         ];
     }
 }

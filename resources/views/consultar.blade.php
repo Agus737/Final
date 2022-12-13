@@ -19,8 +19,15 @@
       timer: 3500
     })</script>"!!}
   @endif
-        
-    
+  @if (session()->has('editado'))
+  {!!"<script> Swal.fire({
+    position: 'center',
+    icon: 'warning',
+    title: 'Se ha editado el Alumno',
+    showConfirmButton: false,
+    timer: 3500
+  })</script>"!!}
+@endif
     <div class="container">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#registro">
@@ -48,9 +55,10 @@
                     <td>{{$consulta->course}}</td>
                     <td>{{$consulta->address}}</td>
                     <td>{{$consulta->movile_no}}</td>
-                    <th><button type="button" class="btn btn-outline-success">Edit</button></th>
+                    <th><button type="button" class="btn btn-outline-success"data-bs-toggle="modal" data-bs-target="#editar{{$consulta->id}}">Edit</button></th>
                     <th><button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#eliminar{{$consulta->id}}">Delete</button></th>
                     @include('eliminar')
+                    @include('editar')
                 </tr>
                 </tbody>
                 @endforeach
